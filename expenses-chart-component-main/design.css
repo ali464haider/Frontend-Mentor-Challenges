@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+:root{
+    --red-color:#EC755D;
+    --forzen-color:#76B5BC;
+    --bg-color:#F7E9DC;
+    --light-red-color:#F8C9C3;
+    --light-blue-color:#C9E4E7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #F7E9DC;
+}
+
+p{
+    font-size: 18px;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: clamp(375px, 100%, 450px);
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+header{
+    width: 100%;
+    background-color: var(--red-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px;
+    color: white;
+}
+
+header .balance-info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.balance-info span{
+    font-size: 12px;
+    opacity: .8;
+}
+
+.balance-info p{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.chart-detailes{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.chart-detailes h1{
+    font-size: 25px;
+}
+
+.chart-detailes hr{
+    color: rgba(0, 0, 0, 0.3);
+    margin: 25px 0;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.total span{
+    font-size: 12px;
+    opacity: .5;
+}
+
+.last-month-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: end;
+}
+
+.total .last-month-info p{
+    font-size: 16px;
+}
+
+.chart:hover {
+    cursor: pointer;
+  }

@@ -163,7 +163,7 @@ header nav ul li a:hover{
 .hightlights{
     height: max-content;
     display: grid;
-    grid-template-columns: 1fr .4fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: min-content;
     padding: 40px 113px 40px 113px;
     gap: 40px;
