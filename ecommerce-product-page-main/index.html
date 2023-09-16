@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="design.css" />
+    <title>E-commerce product page</title>
+    <script
+      src="https://kit.fontawesome.com/c36f48124a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <input type="checkbox" class="check" id="menu-icon" />
+
+        <div class="overflow"></div>
+
+        <div class="logo">
+          <label for="menu-icon" class="menu">
+            <img src="./images/icon-menu.svg" alt="Menu Icon" />
+          </label>
+
+          <h1>sneakers</h1>
+        </div>
+
+        <nav>
+          <ul>
+            <li class="close"><i class="fa-solid fa-xmark"></i></li>
+            <li><a href="#">Collectors</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cart">
+          <a href="#"><img src="./images/icon-cart.svg" alt="Cart" /></a>
+          <img src="./images/image-avatar.png" alt="Avatar" />
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="images-box">
+          <div class="main-image">
+            <img src="./images/image-product-1.jpg" alt="Product 1" />
+            <i class="fa-solid fa-angle-left"></i>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+
+          <div class="images">
+            <button class="img1 active">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="Product 1"
+              />
+            </button>
+
+            <button class="img2">
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="Product 2"
+              />
+            </button>
+
+            <button class="img3">
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt="Product 3"
+              />
+            </button>
+
+            <button class="img4">
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="Product 4"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h5>Sneaker Company</h5>
+          <h2>Fall Limited Edition Sneakers</h2>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+
+          <div class="price">
+            <p><span class="new-price">$125.00</span> <span>-50%</span></p>
+            <span class="old-price">$250.00</span>
+          </div>
+
+          <div class="product-quantity">
+            <div class="quantity">
+              <span class="minus">-</span>
+              <span class="order-quantity">1</span>
+              <span class="plus">+</span>
+            </div>
+
+            <button class="addToCart">
+              <img src="./images/icon-cart-white.svg" alt="Icon Cart" />
+              <span>Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      window.onload = () => {
+        document.querySelector("input.check").checked = false;
+      };
+
+      var close = document.querySelector(".close");
+      close.addEventListener("click", () => {
+        document.querySelector("input.check").checked = false;
+
+      });
+
+      var main_image = document.querySelector(".main-image img");
+      var images = document.querySelectorAll(".images button");
+
+      images.forEach((btn, index) => {
+        btn.addEventListener("click", function (e) {
+          var img = btn.querySelector("img").src;
+          main_image.src = `images/image-product-${index + 1}.jpg`;
+          images.forEach((btn) => btn.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+
+      var minus = document.querySelector(".minus");
+      var plus = document.querySelector(".plus");
+      var order_quantity = document.querySelector(".order-quantity");
+      var price = document.querySelector(".new-price");
+      var cart_icon = document.querySelector(".cart img");
+
+      var carrito_numero = document.createElement("span");
+      carrito_numero.classList.add("carrito-numero");
+      order_quantity.textContent = 0;
+
+      minus.addEventListener("click", () => {
+        var quantity = parseInt(order_quantity.textContent);
+        if (quantity > 1) {
+          quantity--;
+          order_quantity.textContent = quantity;
+        }
+      });
+
+      plus.addEventListener("click", () => {
+        var quantity = parseInt(order_quantity.textContent);
+        quantity++;
+        order_quantity.textContent = quantity;
+      });
+
+      var addToCart = document.querySelector(".addToCart");
+
+      addToCart.addEventListener("click", () => {
+        var quantity = parseInt(order_quantity.textContent);
+        if (quantity == 0) {
+          alert("You must add at least one item to your cart.");
+          return;
+        }
+        var price = parseInt(
+          document.querySelector(".new-price").textContent.slice(1)
+        );
+        var total = quantity * price;
+        alert(
+          `You added ${quantity} items to your cart. Your total is $${total}.`
+        );
+        if (parseInt(carrito_numero.textContent) != 0)
+          carrito_numero.textContent =
+            Number(carrito_numero.textContent) + quantity;
+        else carrito_numero.textContent = quantity;
+        if(carrito_numero.textContent == 0){
+          carrito_numero.remove();
+        }else
+        cart_icon.after(carrito_numero);
+      });
+
+      function crearCardBody(cantidad){
+        var cart_card = document.createElement("div");
+        cart_card.classList.add("cart-card");
+  
+        var h4 = document.createElement("h4");
+        h4.textContent = "Cart";
+  
+        var product = document.createElement("div");
+        product.classList.add("product");
+  
+        var product_img = document.createElement("img");
+        product_img.src = "./images/image-product-1-thumbnail.jpg";
+  
+        var product_info = document.createElement("div");
+        product_info.classList.add("product-info");
+  
+        var product_name = document.createElement("p");
+        product_name.textContent = "Fall Limited Edition Sneakers";
+  
+        var product_price = document.createElement("p");
+        product_price.classList.add("product-price");
+        product_price.textContent = `125$ x ${cantidad} = ${
+          125 * cantidad
+        }$`;
+  
+        var borrar_icon = document.createElement("i");
+        borrar_icon.classList.add("fa-solid", "fa-trash-can");
+
+        var cart_btn = document.createElement("button");
+        cart_btn.classList.add("cart-btn");
+        cart_btn.textContent = "Checkout";
+  
+        product_info.append(product_name, product_price);
+        product.append(product_img, product_info, borrar_icon);
+        cart_card.append(h4, product, cart_btn);
+        return cart_card;
+      }
+
+
+    
+
+
+      
+
+
+
+      var cart_show = true;
+
+      cart_icon.addEventListener("click", function(){
+        var cart_card = crearCardBody(parseInt(carrito_numero.textContent));
+        if(cart_show){
+          if(carrito_numero.textContent == 0 & !cart_card.querySelector(".empty-cart")){
+            cart_card.querySelector(".product").remove();
+            cart_card.querySelector("button").remove();
+            var empty_cart = document.createElement("p");
+            empty_cart.classList.add("empty-cart");
+            empty_cart.textContent = "Your cart is empty";
+            cart_card.append(empty_cart);
+          }
+          cart_icon.before(cart_card);
+          var trash = document.querySelector(".fa-trash-can");
+
+          if(trash){
+            trash.addEventListener("click", function(){
+              document.querySelector(".cart-card .product").remove();
+              document.querySelector(".cart-card button").remove();
+              var empty_cart = document.createElement("p");
+              empty_cart.classList.add("empty-cart");
+              empty_cart.textContent = "Your cart is empty";
+              cart_card.append(empty_cart);
+              carrito_numero.remove();
+              carrito_numero.textContent = 0;
+            })
+          }
+
+          cart_show = false;
+        }else{
+          document.querySelector(".cart-card").remove();
+          cart_show = true;
+        }
+      })
+
+
+      var image_slider = document.querySelectorAll(".content .images-box .main-image i")
+
+      var image_index = 0;
+
+        image_slider[0].addEventListener("click", function (e) {
+          if (image_index == 0) {
+            image_index = 3;
+          } else {
+            image_index--;
+          }
+          main_image.src = `images/image-product-${image_index + 1}.jpg`;
+        });
+
+        image_slider[1].addEventListener("click", function (e) {
+          if (image_index == 3) {
+            image_index = 0;
+          } else {
+            image_index++;
+          }
+          main_image.src = `images/image-product-${image_index + 1}.jpg`;
+        });
+    
+      
+
+
+
+
+
+    </script>
+  </body>
+</html>

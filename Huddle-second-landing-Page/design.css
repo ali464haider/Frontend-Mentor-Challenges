@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --Violet: hsl(257, 40%, 49%);
+    --Soft_Magenta: hsl(300, 69%, 71%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: clamp(375px, 100%, 1440px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+p, span, button , i {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hero-section{
+    height: max-content;
+    width: 100%;
+    background: url('./images/bg-desktop.svg') no-repeat center center/cover;
+    background-color: var(--Violet);
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    color: white;
+    
+}
+
+.header img{
+    width: 200px;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns: max-content 1fr;
+    margin-top: 80px;
+}
+
+.hero-content .image img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hero-content .right-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 45px;
+    padding-left: 60px;
+    padding-right: 50px;
+}
+
+.hero-content .right-content h1{
+    font-size: 40px;
+}
+
+.hero-content .right-content p{
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: .85;
+    margin-bottom: 10px;
+}
+
+.hero-content .right-content button{
+    padding: 15px 60px;
+    border-radius: 30px;
+    background-color: white;
+    color: var(--Violet);
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    width: min-content;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+    transition: all .3s ease-in-out;
+}
+
+.hero-content .right-content button:hover{
+    color: white;
+    background-color: var(--Soft_Magenta);
+}
+
+.social-media{
+    display: flex;
+    gap: 20px;
+    align-self: flex-end;
+}
+
+.social-media i{
+    font-size: 16px;
+    color: white;
+    transition: all .3s ease-in-out;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media a{
+    text-decoration: none;
+}
+
+.social-media i:hover{
+    color: var(--Soft_Magenta);
+    border-color: var(--Soft_Magenta);
+}
+
+@media screen and (max-width:968px){
+    .hero-section{
+        padding: 40px 30px 30px 30px;
+        background-image: url('./images/bg-mobile.svg');
+    }
+    .hero-content{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-content .right-content{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .hero-content .right-content h1{
+        font-size: 25px;
+    }
+
+    .hero-content .right-content h1,  .hero-content .right-content p{
+        text-align: center;
+    }
+
+    .hero-content .right-content button{
+        padding: 13px 80px;
+        font-size: 14px;
+        align-self: center;
+        margin-bottom: 60px;
+    }
+
+    .social-media{
+        margin: 0 auto;
+    }
+
+    .social-media i{
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+        font-size: 12px;
+    }
+}

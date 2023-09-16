@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+  <main>
+
+    <header>
+
+      <h1>snap</h1>
+
+      <input type="checkbox" id="check">
+      
+      <nav>
+        <img class="close" src="./images/icon-close-menu.svg" alt="Close Icon">
+        <ul>
+
+          <li>
+            <a href="#">Features <img src="./images/icon-arrow-down.svg" alt="Arrow"></a>
+            <ul class="lista_1">
+              <li><a href="#"><img src="./images/icon-todo.svg" alt="Todo List"> Todo List</a></li>
+              <li><a href="#"><img src="./images/icon-calendar.svg" alt="Calender"> Calender</a></li>
+              <li><a href="#"><img src="./images/icon-reminders.svg" alt="Reminders"> Reminders</a></li>
+              <li><a href="#"><img src="./images/icon-planning.svg" alt="Planning"> Planning</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="#">Company <img src="./images/icon-arrow-down.svg" alt="Arrow"></a>
+            <ul class="lista_2">
+              <li><a href="#">History</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+
+        </ul>
+
+        <div class="login">
+          <a href="#">Login</a>
+          <a href="#" class="signup">Register</a>
+        </div>
+      </nav>
+
+     
+
+      <label for="check" class="menu">
+        <img src="./images/icon-menu.svg" alt="Menu">
+      </label>
+
+     
+
+      <div class="overflow"></div>
+
+    </header>
+
+
+    <div class="content-section">
+      
+      <div class="content-text">
+        <h2>Make <br> remote work</h2>
+        <p>
+          Get your team in sync. no matter your location.
+          <br>
+          Streamline processes. create team rituals, and watch productivity soar.
+        </p>
+
+        <button>Learn more</button>
+
+        <div class="icons">
+          <img src="./images/client-audiophile.svg" alt="Client">
+          <img src="./images/client-databiz.svg" alt="Client">
+          <img src="./images/client-maker.svg" alt="Client">
+          <img src="./images/client-meet.svg" alt="Client">
+        </div>
+
+
+
+      </div>
+    
+      <div class="content-image">
+        <img src="./images/image-hero-desktop.png" alt="">
+      </div>
+
+    </div>
+
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  var lista_1 = document.querySelector('.lista_1');
+  var lista_2 = document.querySelector('.lista_2');
+  var a1 = document.querySelector("header nav ul li:nth-child(1) a")
+  var a2 = document.querySelector("header > nav > ul > li:nth-child(2) a")
+  a1.addEventListener('click', function(){
+    a1.classList.toggle('active');
+    a2.classList.remove('active');
+  })
+  console.log(a2);
+  a2.addEventListener('click', function(){
+    a2.classList.toggle('active');
+    a1.classList.remove('active');
+  })
+
+  var close = document.querySelector('.close');
+
+  close.addEventListener('click', function(){
+    document.querySelector("input[type='checkbox']").checked = false;
+  })
+
+
+  const imagen = document.querySelector(".content-image img")
+ function cambiarFuenteDeImagen() {
+  const anchoPantalla = window.innerWidth;
+  if (anchoPantalla <= 968) {
+    imagen.src = "./images/image-hero-mobile.png";
+  } else {
+    imagen.src = "./images/image-hero-desktop.png";
+  }
+}
+cambiarFuenteDeImagen();
+
+window.addEventListener("resize", cambiarFuenteDeImagen);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form</title>
+    <link rel="stylesheet" href="design.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="side-bar">
+          <ul>
+            <li>
+              <span class="active">1</span
+              ><span class="opacity">STEP 1<span>YOUR INFO</span></span>
+            </li>
+            <li>
+              <span>2</span
+              ><span class="opacity">STEP 2<span>SELECT PLAN</span></span>
+            </li>
+            <li>
+              <span>3</span
+              ><span class="opacity">STEP 3<span>ADD-ONS</span></span>
+            </li>
+            <li>
+              <span>4</span
+              ><span class="opacity">STEP 4<span>SUMMARY</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="con-form first-form" id="first_form">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address and phone number.</p>
+          <form>
+            <div class="group-label">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="group-label">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="group-label">
+              <label for="phone">Phone Number</label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+          </form>
+          <button onclick="primerenvio();">Next Step</button>
+        </div>
+
+        <div id="second_form" class="second-form con-form">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or annual billing.</p>
+          <div class="plans">
+            <div class="plan">
+              <img src="./assets/images/icon-arcade.svg" alt="" />
+              <h4>Arcade</h4>
+              <span>$90/yr</span>
+              <p>2 monoths free</p>
+            </div>
+
+            <div class="plans">
+              <div class="plan">
+                <img src="./assets/images/icon-advanced.svg" alt="" />
+                <h4>Advanced</h4>
+                <span>$120/yr</span>
+                <p>2 monoths free</p>
+              </div>
+            </div>
+
+            <div class="plans">
+              <div class="plan">
+                <img src="./assets/images/icon-pro.svg" alt="" />
+                <h4>Pro</h4>
+                <span>$150/yr</span>
+                <p>2 monoths free</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="periodo">
+            <span>Monthly</span>
+            <input type="checkbox" onclick="cambiarPeriodo();" />
+            <span>Anualy</span>
+          </div>
+
+          <div class="btns" style="margin-top: auto">
+            <button onclick="primerenvio();">Go Back</button>
+            <button onclick="segundoenvio();">Next Step</button>
+          </div>
+        </div>
+
+        <div id="third_form" class="third-form con-form">
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+          
+          <div class="services">
+
+            <div class="service">
+              <input type="checkbox">
+              <h3>
+                Online service <br> <span>Access to multiplayer games</span>
+              </h3>
+              <span>$1/mo</span>
+            </div>
+
+            <div class="service">
+              <input type="checkbox">
+              <h3>
+                Larger service <br> <span>Extra 1TB of cloud save</span>
+              </h3>
+              <span>$2/mo</span>
+            </div>
+
+            <div class="service">
+              <input type="checkbox">
+              <h3>
+                Custommizable profile <br> <span>Custom theme on your profile</span>
+              </h3>
+              <span>$2/mo</span>
+            </div>
+
+          </div>
+
+         
+          <div class="btns" style="margin-top: auto">
+            <button onclick="segundoenvio();">Go Back</button>
+            <button onclick="tercerenvio();">Next Step</button>
+          </div>
+        </div>
+      
+      </div>
+    </main>
+  </body>
+
+  <script src="./design.js"></script>
+</html>

@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background: #E0E8FF;
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: -45%;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 190px 1fr;
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .image{
+    background-image: url('./images/illustration-hero.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.container .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.content h2, .content p{
+    text-align: center;
+    padding: 0 10px;
+}
+
+.content h2{
+    color: #152443;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.content > p{
+    color: #6E8098;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.pack{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+    background: #F8F9FE;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.pack .pack-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.pack-content h3{
+    color: #152443;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.pack-content p{
+    color: #6E8098;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.pack a{
+    margin-left: auto;
+    color: #6E67C6;
+    font-weight: 600;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.button button{
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #382AE1;
+    color: white;
+    font-weight: 600;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 20px 20px rgba(56, 42, 225, 0.2);
+}
+
+.button button:hover{
+    background: #6E67C6;
+}
+
+.button a{
+    color: #6E8098;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s all;
+}
+
+.button a:hover{
+    color: #382AE1;
+}

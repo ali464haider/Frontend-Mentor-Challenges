@@ -1,0 +1,291 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Ubuntu', sans-serif;
+  background: #EEF5FF;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 1000px;
+    height: 80%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    overflow: hidden;
+}
+
+.container .side-bar{
+    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -130px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.side-bar ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    color: #fff;
+    gap: 20px;
+}
+
+.side-bar ul li{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.side-bar ul li span{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.side-bar ul li > span:first-of-type{
+    border: 1px solid #EEF5FF;
+    border-radius: 50%;
+    padding: 6px 11px;
+}
+
+.side-bar ul li > span:first-of-type.active{
+    background: #EEF5FF;
+    color: #1E86FF;
+}
+
+.side-bar ul li > span:nth-of-type(2){
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(141, 141, 141);
+    letter-spacing: 1.1px;
+}
+
+.side-bar ul li > span:nth-of-type(2) span{
+    color: #fff;
+    opacity: 1;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.container .con-form{
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    color: hsl(213, 96%, 18%);
+}
+
+.con-form h1{
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.con-form p{
+    font-size:16px;
+    opacity: .5;
+    margin-bottom: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.group-label{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 30px;
+    color:hsl(213, 96%, 18%) ;
+}
+
+.group-label label{
+    font-weight: 600;
+}
+
+.group-label input{
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+    outline: none;
+    font-size: 14px;
+}
+
+.group-label input:focus{
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+.con-form  button{
+    align-self: flex-end;
+    justify-content: flex-end;
+    color: white;
+    background: hsl(213, 90%, 31%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+button:hover{
+    background: hsl(213, 90%, 25%);
+}
+
+#second_form > .plans{
+    display:flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.plan{
+    border: 2px solid rgba(211, 211, 211, 0.655);
+    border-radius: 8px;
+    padding: 20px 15px;
+    width: 150px;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.plan > img{
+    margin-bottom: 30px;
+}
+
+
+.plan h4{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: hsl(213, 96%, 18%);
+}
+
+.plan span{
+    display: block;
+    color: black;
+    opacity: .4;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.plan p{
+    display: inline;
+    color: hsl(213, 96%, 18%);
+    opacity: 1;
+    font-size: 13px;
+}
+
+.plan:hover{
+    border:2px solid hsl(243, 100%, 62%);
+    background-color: #edf0fe;
+}
+
+#second_form .periodo{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 0px;
+    background-color: #F8F9FE;
+    border-radius: 8px;
+}
+
+/* estilo moderno para el checkbox */
+
+/* Estilo base para los checkboxes */
+input[type="checkbox"] {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para los checkboxes seleccionados */
+    input[type="checkbox"]:checked {
+        background-color: hsl(243, 100%, 62%);
+        border-color: hsl(243, 100%, 62%);
+    }
+  
+.periodo > span{
+    opacity: .6;
+}
+
+.btns{
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btns button:nth-of-type(1){
+    background: transparent;
+    border: none;
+    opacity: .6;
+    color: black;
+    align-self: flex-start;
+}
+
+.btns button:nth-of-type(1):hover{
+    opacity: 1;
+}
+
+
+.third-form > .services{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 100%;
+}
+
+.third-form > .services .service{
+    display:flex;
+    gap: 30px;
+    padding: 17px 20px;
+    justify-content: start;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
+.third-form > .services .service > h3 > span{
+    color: black;
+    opacity: .4;
+    font-size: 13px;
+}
+
+.third-form > .services .service > span{
+    margin-left: auto;
+    color: hsl(243, 100%, 62%)
+}
+
+ .service:hover{
+    border: 2px solid hsl(243, 100%, 62%);
+    background-color:  #edf0fe;
+}
+    

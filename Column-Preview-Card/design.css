@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background: #F2F2F2;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 60%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card{
+    padding: 40px 50px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    color: white;
+}
+
+.orange{
+    background: #E28525;
+}
+
+.blue{
+    background: #016972;
+}
+
+.green{
+    background: #00403F;
+}
+
+.card img{
+    width: 55px;
+}
+
+.card h1{
+    font-size: 2rem;
+    letter-spacing: 0px;
+}
+
+.card p{
+    line-height: 1.5;
+    font-size: 14px;
+    opacity: .7;
+    word-spacing: 3px;
+    margin-top: 10px;
+}
+
+.card button{
+    margin-top: auto;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    width: 140px;
+    cursor: pointer;
+}
+
+.card.orange button{
+    color: #E28525;
+}
+
+.card.blue button{
+    color: #016972;
+}
+
+.card.green button{
+    color: #00403F;
+}
+
+.card button:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+    font-weight: 500;
+}
